@@ -1,8 +1,8 @@
-Below is a ready to paste README.md for your project. I read through both files and included the important details, features, how it works, setup, integration notes, limitations, and how other people can use it in their own website or code.
+Here is a cleaned, GitHub friendly README.md you can paste directly into your repo. I fixed the structure, removed messy formatting, and made the file paths consistent with your code.
 
 # Email Validator UI and API
 
-A modern email validation project built with PHP, JavaScript, and a custom iOS style user interface.
+A modern email validation project built with PHP, JavaScript, and a custom iOS inspired user interface.
 
 This repository includes:
 
@@ -16,24 +16,23 @@ This repository includes:
 - Detailed logging on the API side
 - A clean, responsive, mobile friendly user experience
 
----
 
 ## Project Structure
 
+> Important: your frontend file starts with a PHP opening tag, so it should be saved as `index.php`.  
+> If you want to use `index.html`, remove the first PHP line from the UI file.
+
 ```bash
-/ui
-  index.php
+project-root/
+├── ui/
+│   └── index.php
+├── api/
+│   └── validate/
+│       ├── index.php
+│       └── logs/
+└── README.md
 
-/api/validate
-  index.php
-  /logs
-
-> Important: the UI code starts with a PHP tag, so it should be saved as index.php, not index.html, unless you remove the PHP opening line. If you want to keep the file name as index.html, delete the first PHP line from the UI file.
-
-
-
-
----
+```
 
 Features
 
@@ -69,7 +68,7 @@ Result cards with clear status tags
 
 Toast notifications
 
-Info icons with tooltips for every major function
+Info icons with tooltips for major functions
 
 
 API Endpoint
@@ -157,7 +156,7 @@ API flow
 ---
 
 Requirements
-
+```bash
 PHP 7.4 or newer
 
 cURL enabled
@@ -180,7 +179,7 @@ A writable logs directory
 ---
 
 Installation
-
+```bash
 1. Clone the repository
 
 git clone https://github.com/your-username/your-repo-name.git
@@ -188,10 +187,11 @@ cd your-repo-name
 
 2. Place the files in the correct folders
 
-Make sure the structure looks like this:
+Make sure your project matches this structure:
 
 /ui/index.php
 /api/validate/index.php
+/api/validate/logs/
 
 3. Run the project locally
 
@@ -209,7 +209,7 @@ The UI will load and call the API in the same project.
 ---
 
 API Endpoint
-
+```
 Endpoint
 
 /api/validate/index.php
@@ -233,7 +233,7 @@ JSON body
 
 
 Example GET request
-
+```bash
 /api/validate/index.php?email=user@example.com
 
 Example POST request
@@ -244,14 +244,14 @@ Content-Type: application/json
 {
   "email": "user@example.com"
 }
-
+```
 
 ---
 
 API Response Format
 
 The API returns JSON in this format:
-
+```bash
 {
   "success": true,
   "valid": true,
@@ -270,7 +270,7 @@ The API returns JSON in this format:
     "masked_email": "us***@example.com"
   }
 }
-
+```
 Response fields
 
 success: tells you whether the API call itself succeeded
@@ -336,15 +336,13 @@ The user can change the API endpoint path in the UI and save it in local storage
 
 Important Integration Note
 
-There is one important detail to know when using the files together:
+The UI supports bulk email input, but the current API validates one email per request.
 
-The UI supports bulk emails
+That means:
 
-The UI can collect multiple emails and send them as an array, or as a comma separated query string.
+The UI can collect many emails
 
-The current API accepts a single email
-
-The current API file processes one email at a time from:
+The API currently processes a single email at a time from:
 
 email in GET
 
@@ -353,11 +351,10 @@ email in POST
 email in JSON body
 
 
-It does not currently loop through an emails array.
 
 What this means
 
-If you want bulk validation to work fully end to end, you have two choices:
+If you want bulk validation to work fully end to end, you have two options:
 
 Option 1
 
@@ -377,15 +374,15 @@ How to Use This in Your Own Website
 You can reuse the API in your own project by making a fetch request from JavaScript.
 
 Single email example using GET
-
+```bash
 fetch('/api/validate/index.php?email=' + encodeURIComponent(email))
   .then(response => response.json())
   .then(data => {
     console.log(data);
   });
-
+```
 Single email example using POST
-
+```bash
 fetch('/api/validate/index.php', {
   method: 'POST',
   headers: {
@@ -400,11 +397,11 @@ fetch('/api/validate/index.php', {
 .then(data => {
   console.log(data);
 });
-
+```
 Using the API in another site
 
 If your frontend is on another domain, update the API URL inside your frontend code to the live path, for example:
-
+```bash
 const apiPath = 'https://yourdomain.com/api/validate/index.php';
 
 Make sure CORS settings on the API allow that origin.
@@ -415,9 +412,9 @@ Make sure CORS settings on the API allow that origin.
 Logging
 
 The API writes logs into:
-
-/api/validate/logs
-
+```bash
+/api/validate/logs/
+```
 Each log entry includes:
 
 Timestamp
@@ -567,7 +564,7 @@ External service availability
 
 Request format
 
-Server logs in /api/validate/logs
+Server logs in /api/validate/logs/
 
 
 
@@ -598,7 +595,7 @@ Add dashboard charts and analytics
 ---
 
 Example Deployment Layout
-
+```bash
 project-root/
 ├── ui/
 │   └── index.php
