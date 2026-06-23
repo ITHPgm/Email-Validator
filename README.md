@@ -1,5 +1,3 @@
-Here is a cleaned, GitHub friendly README.md you can paste directly into your repo. I fixed the structure, removed messy formatting, and made the file paths consistent with your code.
-
 # Email Validator UI and API
 
 A modern email validation project built with PHP, JavaScript, and a custom iOS inspired user interface.
