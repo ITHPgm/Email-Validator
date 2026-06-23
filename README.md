@@ -229,15 +229,15 @@ Supported request methods
 > POST
 
 
-Accepted input formats
+## Accepted input formats
 
-The API accepts email input from:
+#### The API accepts email input from:
 
-Query string
+> Query string
 
-Form data
+> Form data
 
-JSON body
+> JSON body
 
 
 Example GET request
@@ -314,11 +314,9 @@ File upload
 
 ```The UI supports uploading:
 
-CSV
-
-TXT
-
-PDF
+> CSV
+> TXT
+> PDF
 
 
 ```
@@ -333,9 +331,9 @@ Request method switch
 
 ```The user can choose:
 
-GET
+> GET
 
-POST
+> POST
 
 ```
 
@@ -459,25 +457,25 @@ This is useful for debugging, request tracing, and monitoring.
 
 ---
 
-UI Design Notes
+## UI Design Notes
 
-The frontend includes:
+### The frontend includes:
 
-iOS inspired layout
+> iOS inspired layout
 
-Glassmorphism cards
+> Glassmorphism cards
 
-Animated glow background
+> Animated glow background
 
-Hover effects
+> Hover effects
 
-3D style motion
+> 3D style motion
 
-Responsive mobile friendly layout
+> Responsive mobile friendly layout
 
-Clean result cards
+> Clean result cards
 
-Icon based tooltips
+> Icon based tooltips
 
 
 It is designed to feel modern, premium, and app like.
@@ -485,32 +483,32 @@ It is designed to feel modern, premium, and app like.
 
 ---
 
-Browser and Compatibility Notes
+## Browser and Compatibility Notes
 
-The frontend uses:
+## The frontend uses:
 
-Google Fonts
+> Google Fonts
 
-Font Awesome
+> Font Awesome
 
-AOS animation library
+> AOS animation library
 
-JavaScript fetch
+> JavaScript fetch
 
-FileReader API
+> FileReader API
 
-Local storage
+> Local storage
 
 
-For best results, use a modern browser such as:
+## For best results, use a modern browser such as:
 
-Chrome
+> Chrome
 
-Edge
+> Edge
 
-Firefox
+> Firefox
 
-Safari
+> Safari
 
 
 
@@ -520,15 +518,15 @@ Security Notes
 
 This project is suitable for a portfolio, internal tool, or lightweight public use.
 
-A few things to keep in mind:
+# A few things to keep in mind:
 
 The API is open to requests because CORS is set to *
 
-The API does not currently require authentication
+> The API does not currently require authentication
 
-The UI can be embedded into another site if the API path is updated
+> The UI can be embedded into another site if the API path is updated
 
-If you expose this publicly, consider adding:
+# If you expose this publicly, consider adding:
 
 > Rate limiting
 
@@ -549,21 +547,21 @@ The UI loads but validation does not work
 
 # Check that:
 
-The API path is correct
+> The API path is correct
 
-The API file exists in 
+> The API file exists in 
 ```bash
 /api/validate/index.php
 
 ```
-The server supports PHP
+> The server supports PHP
 
-cURL is enabled
+> cURL is enabled
 
-Your server has internet access
+> Your server has internet access
 
 
-The bulk mode shows no results
+> The bulk mode shows no results
 
 The current API accepts a single email at a time. You may need to update the API to support arrays of emails or send requests one by one.
 
@@ -573,11 +571,11 @@ That is expected with plain text browser extraction. Use CSV or TXT for best res
 
 The API returns an error from the external service
 
-Check:
+# Check:
 
-Internet access
+> Internet access
 
-External service availability
+> External service availability
 
 # Request format
 ```bash
