@@ -2,8 +2,9 @@
 
 A modern email validation project built with PHP, JavaScript, and a custom iOS inspired user interface.
 
-This repository includes:
+# This repository includes:
 
+```bash
 - A polished frontend UI for validating email addresses
 - A PHP API endpoint that validates input and forwards requests to an external validation service
 - Single email validation
@@ -14,6 +15,7 @@ This repository includes:
 - Detailed logging on the API side
 - A clean, responsive, mobile friendly user experience
 
+```
 
 ## Project Structure
 
@@ -32,81 +34,81 @@ project-root/
 
 ```
 
-Features
+## Features
 
-Frontend UI
+>  Frontend UI
 
-iOS inspired glassmorphism design
+>  iOS inspired glassmorphism design
 
-Animated background glow
+> Animated background glow
 
-AOS scroll animations
+> AOS scroll animations
 
-Typing effect
+> Typing effect
 
-Font Awesome icons throughout
+> Font Awesome icons throughout
 
-Single email validator mode
+> Single email validator mode
 
-Bulk email validator mode
+> Bulk email validator mode
 
-GET and POST method selector
+> GET and POST method selector
 
-API endpoint path selector
+> API endpoint path selector
 
-File upload support
+> File upload support
 
-Drag and drop support
+> Drag and drop support
 
-Local storage for saving API path
+> Local storage for saving API path
 
-Live preview of extracted bulk emails
+> Live preview of extracted bulk emails
 
-Result cards with clear status tags
+> Result cards with clear status tags
 
-Toast notifications
+> Toast notifications
 
-Info icons with tooltips for major functions
+> Info icons with tooltips for major functions
 
 
-API Endpoint
+# API Endpoint
 
-Accepts GET and POST requests
+> Accepts GET and POST requests
 
-Accepts JSON body, form data, and query parameters
+> Accepts JSON body, form data, and query parameters
 
-Validates that email input exists
+> Validates that email input exists
 
-Validates email format
+> Validates email format
 
-Calls an external email validation service
+> Calls an external email validation service
 
-Returns structured JSON responses
+> Returns structured JSON responses
 
-Logs requests, errors, API calls, and results
+> Logs requests, errors, API calls, and results
 
-Generates a request ID for tracing
+> Generates a request ID for tracing
 
-Supports CORS for frontend usage
+> Supports CORS for frontend usage
 
 
 
 ---
 
-How It Works
+# How It Works
 
-UI flow
+# UI flow
 
 1. The user opens the frontend in /ui
 
 
 2. The user chooses:
 
-Single validation or bulk validation
+> Single validation or bulk validation
 
-GET or POST request
+> GET or POST request
 
-API endpoint path
+> API endpoint path
 
 
 
@@ -126,7 +128,7 @@ API endpoint path
 
 
 
-API flow
+# API flow
 
 1. The API receives input from GET, POST, or JSON body
 
@@ -153,7 +155,7 @@ API flow
 
 ---
 
-Requirements
+# Requirements
 ```bash
 PHP 7.4 or newer
 
@@ -177,7 +179,7 @@ A writable logs directory
 
 ---
 
-Installation
+# Installation
 
 1. Clone the repository
 ```bash
@@ -211,18 +213,18 @@ The UI will load and call the API in the same project.
 
 ---
 
-API Endpoint
+# API Endpoint
 
-Endpoint
+# Endpoint
 ```bash
 /api/validate/index.php
 
 ```
 Supported request methods
 
-GET
+> GET
 
-POST
+> POST
 
 
 Accepted input formats
@@ -253,7 +255,7 @@ Content-Type: application/json
 
 ---
 
-API Response Format
+# API Response Format
 
 The API returns JSON in this format:
 ```bash
@@ -276,29 +278,29 @@ The API returns JSON in this format:
   }
 }
 ```
-Response fields
+# Response fields
 
-success: tells you whether the API call itself succeeded
+> success: tells you whether the API call itself succeeded
 
-valid: tells you whether the email passed validation
+> valid: tells you whether the email passed validation
 
-message: human readable result message
+> message: human readable result message
 
-details: extra validation data
+> details: extra validation data
 
 
 
 ---
 
-Frontend Features Explained
+# Frontend Features Explained
 
-Single validation
+> Single validation
 
-The user types one email address and clicks validate.
+> The user types one email address and clicks validate.
 
-Bulk validation
+> Bulk validation
 
-The user can enter multiple emails separated by commas.
+> The user can enter multiple emails separated by commas.
 
 Example:
 ```bash
@@ -307,7 +309,8 @@ john@example.com, jane@example.com, support@example.com
 ```
 File upload
 
-The UI supports uploading:
+
+```The UI supports uploading:
 
 CSV
 
@@ -316,6 +319,7 @@ TXT
 PDF
 
 
+```
 The file contents are scanned and email addresses are extracted automatically.
 
 Important note about PDF uploads
@@ -324,49 +328,51 @@ The current frontend reads PDFs as plain text in the browser. That works best fo
 
 Request method switch
 
-The user can choose:
+
+```The user can choose:
 
 GET
 
 POST
 
+```
 
 The UI automatically sends the data using the selected method.
 
-API path selector
+# API path selector
 
 The user can change the API endpoint path in the UI and save it in local storage.
 
 
 ---
 
-Important Integration Note
+# Important Integration Note
 
 The UI supports bulk email input, but the current API validates one email per request.
 
-That means:
+# That means:
 
-The UI can collect many emails
+> The UI can collect many emails
 
-The API currently processes a single email at a time from:
+> The API currently processes a single email at a time from:
 
-email in GET
+> email in GET
 
-email in POST
+> email in POST
 
-email in JSON body
+> email in JSON body
 
 
 
-What this means
+# What this means
 
 If you want bulk validation to work fully end to end, you have two options:
 
-Option 1
+# Option 1
 
 Update the API to accept an array of emails and return results for each email.
 
-Option 2
+# Option 2
 
 Keep the API as is and make the UI send one request per email.
 
@@ -375,11 +381,11 @@ This README documents the current code exactly as provided so users understand h
 
 ---
 
-How to Use This in Your Own Website
+# How to Use This in Your Own Website
 
 You can reuse the API in your own project by making a fetch request from JavaScript.
 
-Single email example using GET
+# Single email example using GET
 ```bash
 fetch('/api/validate/index.php?email=' + encodeURIComponent(email))
   .then(response => response.json())
@@ -387,7 +393,7 @@ fetch('/api/validate/index.php?email=' + encodeURIComponent(email))
     console.log(data);
   });
 ```
-Single email example using POST
+# Single email example using POST
 ```bash
 fetch('/api/validate/index.php', {
   method: 'POST',
@@ -404,7 +410,7 @@ fetch('/api/validate/index.php', {
   console.log(data);
 });
 ```
-Using the API in another site
+# Using the API in another site
 
 If your frontend is on another domain, update the API URL inside your frontend code to the live path, for example:
 ```bash
@@ -416,7 +422,7 @@ Make sure CORS settings on the API allow that origin.
 
 ---
 
-Logging
+# Logging
 
 The API writes logs into:
 ```bash
@@ -522,26 +528,24 @@ The UI can be embedded into another site if the API path is updated
 
 If you expose this publicly, consider adding:
 
-Rate limiting
+> Rate limiting
 
-API keys
+> Request throttling
 
-Request throttling
+> Abuse protection
 
-Abuse protection
-
-Better PDF parsing
+> Better PDF parsing
 
 
 
 
 ---
 
-Common Troubleshooting
+# Common Troubleshooting
 
 The UI loads but validation does not work
 
-Check that:
+# Check that:
 
 The API path is correct
 
@@ -573,7 +577,7 @@ Internet access
 
 External service availability
 
-Request format
+# Request format
 ```bash
 Server logs in /api/validate/logs/
 
@@ -582,31 +586,29 @@ Server logs in /api/validate/logs/
 
 ---
 
-Recommended Improvements
+# Recommended Improvements
 
-If you want to upgrade this project later, good next steps are:
+> If you want to upgrade this project later, good next steps are:
 
-Add true bulk API support
+> Add true bulk API support
 
-Add API key authentication
+> Add rate limiting
 
-Add rate limiting
+> Add CSV export of validation results
 
-Add CSV export of validation results
+> Add server side PDF parsing
 
-Add server side PDF parsing
+> Add request caching
 
-Add request caching
+> Add user accounts and history
 
-Add user accounts and history
-
-Add dashboard charts and analytics
+> Add dashboard charts and analytics
 
 
 
 ---
 
-Example Deployment Layout
+# Example Deployment Layout
 ```bash
 project-root/
 ├── ui/
