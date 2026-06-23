@@ -183,8 +183,10 @@ A writable logs directory
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/ITHPgm/Email-Validator/
+```
+```bash
+cd Email-Validator
 
 ```
 2. Place the files in the correct folders
