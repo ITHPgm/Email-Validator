@@ -20,7 +20,7 @@ This repository includes:
 
 ## Project Structure
 
-
+```bash
 /ui
   index.php
 
@@ -607,10 +607,3 @@ project-root/
 │       ├── index.php
 │       └── logs/
 └── README.md
-
-
----
-
-Author
-
-ITH PGM 
