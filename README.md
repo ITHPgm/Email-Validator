@@ -175,45 +175,51 @@ PHP server with rewrite support
 A writable logs directory
 
 
+```
 
 ---
 
 Installation
-```bash
-1. Clone the repository
 
+1. Clone the repository
+```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
+```
 2. Place the files in the correct folders
 
 Make sure your project matches this structure:
-
+```bash
 /ui/index.php
 /api/validate/index.php
 /api/validate/logs/
 
+```
 3. Run the project locally
 
 If you are testing locally, start a PHP server from the project root:
-
+```bash
 php -S localhost:8000
 
+```
 Then open:
-
+```bash
 http://localhost:8000/ui/
 
+```
 The UI will load and call the API in the same project.
 
 
 ---
 
 API Endpoint
-```
-Endpoint
 
+Endpoint
+```bash
 /api/validate/index.php
 
+```
 Supported request methods
 
 GET
@@ -236,8 +242,9 @@ Example GET request
 ```bash
 /api/validate/index.php?email=user@example.com
 
+```
 Example POST request
-
+```bash
 POST /api/validate/index.php
 Content-Type: application/json
 
@@ -296,9 +303,10 @@ Bulk validation
 The user can enter multiple emails separated by commas.
 
 Example:
-
+```bash
 john@example.com, jane@example.com, support@example.com
 
+```
 File upload
 
 The UI supports uploading:
@@ -404,6 +412,7 @@ If your frontend is on another domain, update the API URL inside your frontend c
 ```bash
 const apiPath = 'https://yourdomain.com/api/validate/index.php';
 
+```
 Make sure CORS settings on the API allow that origin.
 
 
@@ -416,7 +425,7 @@ The API writes logs into:
 /api/validate/logs/
 ```
 Each log entry includes:
-
+```bash
 Timestamp
 
 Request ID
@@ -438,6 +447,7 @@ Validation result
 External API response metadata
 
 
+```
 This is useful for debugging, request tracing, and monitoring.
 
 
@@ -537,8 +547,11 @@ Check that:
 
 The API path is correct
 
-The API file exists in /api/validate/index.php
+The API file exists in 
+```bash
+/api/validate/index.php
 
+```
 The server supports PHP
 
 cURL is enabled
@@ -563,9 +576,10 @@ Internet access
 External service availability
 
 Request format
-
+```bash
 Server logs in /api/validate/logs/
 
+```
 
 
 ---
@@ -604,3 +618,5 @@ project-root/
 │       ├── index.php
 │       └── logs/
 └── README.md
+
+```
