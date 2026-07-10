@@ -611,8 +611,11 @@ Server logs in /api/validate/logs/
 # Example Deployment Layout
 ```bash
 project-root/
-├── ui/
-│   └── index.php
+├──
+└── index.html (or use index.php)
+├── assets/
+│   ├── style.css
+│   └──script.js
 ├── api/
 │   └── validate/
 │       ├── index.php
